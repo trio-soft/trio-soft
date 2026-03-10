@@ -2,49 +2,15 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
-    <link rel="stylesheet" as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"/>
-    <title>トリオソフト</title>
+<title>トリオソフト</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="../assets/css/tailwind.css" />
+    <script type="module" src="../dist/main.js"></script>
 </head>
 <body>
 <div class="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden" style="font-family: Inter, 'Noto Sans', sans-serif">
     <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#eaedf0] px-10 py-3">
-            <div class="flex items-center gap-4 text-[#111518]">
-                <div class="size-4">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
-                              fill="currentColor"></path>
-                    </svg>
-                </div>
-                <h2 class="text-[#111518] text-lg font-bold leading-tight tracking-[-0.015em]">
-                    <a href="./">トリオソフト</a>
-                </h2>
-            </div>
-            <div class="flex flex-1 justify-end gap-8">
-                <div class="flex items-center gap-9">
-                    <a class="text-[#0e141b] text-sm font-medium leading-normal" href="services.html">サービス</a>
-                    <a class="text-[#0e141b] text-sm font-medium leading-normal" href="cases.html">導入事例</a>
-                    <a class="text-[#0e141b] text-sm font-medium leading-normal" href="about.html">会社概要</a>
-                    <a class="text-[#0e141b] text-sm font-medium leading-normal" href="contact.html">お問い合わせ</a>
-                </div>
-                <div class="flex gap-2">
-                    <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#1572cf] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]">
-                        <span class="truncate"><a href="contact.html">ご相談はこちら</a></span>
-                    </button>
-                    <a href="../language.html" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e7edf3] text-[#0e141b] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
-                        <div class="text-[#0e141b]" data-icon="Globe" data-size="20px" data-weight="regular">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                                <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM101.63,168h52.74C149,186.34,140,202.87,128,215.89,116,202.87,107,186.34,101.63,168ZM98,152a145.72,145.72,0,0,1,0-48h60a145.72,145.72,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.79a161.79,161.79,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154.37,88H101.63C107,69.66,116,53.13,128,40.11,140,53.13,149,69.66,154.37,88Zm19.84,16h38.46a88.15,88.15,0,0,1,0,48H174.21a161.79,161.79,0,0,0,0-48Zm32.16-16H170.94a142.39,142.39,0,0,0-20.26-45A88.37,88.37,0,0,1,206.37,88ZM105.32,43A142.39,142.39,0,0,0,85.06,88H49.63A88.37,88.37,0,0,1,105.32,43ZM49.63,168H85.06a142.39,142.39,0,0,0,20.26,45A88.37,88.37,0,0,1,49.63,168Zm101.05,45a142.39,142.39,0,0,0,20.26-45h35.43A88.37,88.37,0,0,1,150.68,213Z"></path>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </header>
+        <trio-site-header locale="ja"></trio-site-header>
         <div class="px-40 flex flex-1 justify-center py-5">
             <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
                 <div class="flex flex-wrap justify-between gap-3 p-4">
@@ -106,7 +72,7 @@
                 <div class="@container">
                     <div class="flex flex-col justify-end gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
                         <div class="flex flex-col gap-2 text-center"><h1 class="text-[#111518] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"> 最先端テクノロジーでビジネスを変革しませんか？ </h1>
-                            <p class="text-[#111518] text-base font-normal leading-normal max-w-[720px"> プロジェクトのご相談やトリオソフトがどのように目標達成をサポートできるか、お気軽にお問い合わせください。 </p>
+                            <p class="text-[#111518] text-base font-normal leading-normal max-w-[720px]"> プロジェクトのご相談やトリオソフトがどのように目標達成をサポートできるか、お気軽にお問い合わせください。 </p>
                         </div>
                         <div class="flex flex-1 justify-center">
                             <div class="flex justify-center">
@@ -119,21 +85,8 @@
                 </div>
             </div>
         </div>
-        <footer class="flex justify-center">
-            <div class="flex max-w-[960px] flex-1 flex-col">
-                <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-                    <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                        <a class="text-[#4d7399] text-base font-normal leading-normal min-w-40" href="#">プライバシーポリシー</a>
-                        <a class="text-[#4d7399] text-base font-normal leading-normal min-w-40" href="#">利用規約</a>
-                    </div>
-                    <p class="text-[#4d7399] text-base font-normal leading-normal"> © 2025 Trio-Soft. All rights reserved. </p>
-                </footer>
-            </div>
-        </footer>        <!--        <footer class="flex justify-center">-->        <!--            <div class="flex max-w-[960px] flex-1 flex-col">-->        <!--                <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">-->        <!--                    <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">-->        <!--                        <a class="text-[#5e7387] text-base font-normal leading-normal min-w-40" href="#">Services</a>-->        <!--                        <a class="text-[#5e7387] text-base font-normal leading-normal min-w-40" href="#">Projects</a>-->        <!--                        <a class="text-[#5e7387] text-base font-normal leading-normal min-w-40" href="#">About Us</a>-->        <!--                        <a class="text-[#5e7387] text-base font-normal leading-normal min-w-40" href="#">Contact</a>-->        <!--                    </div>-->
-        <!--                    <div class="flex flex-wrap justify-center gap-4">-->        <!--                        <a href="#">-->        <!--                            <div class="text-[#5e7387]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">-->        <!--                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">-->        <!--                                    <path-->
-        <!--                                            d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"-->        <!--                                    ></path>-->        <!--                                </svg>-->        <!--                            </div>-->
-        <!--                        </a>-->        <!--                        <a href="#">-->        <!--                            <div class="text-[#5e7387]" data-icon="LinkedinLogo" data-size="24px" data-weight="regular">-->        <!--                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">-->        <!--                                    <path-->        <!--                                            d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"-->        <!--                                    ></path>-->        <!--                                </svg>-->        <!--                            </div>-->
-        <!--                        </a>-->        <!--                    </div>-->        <!--                    <p class="text-[#5e7387] text-base font-normal leading-normal">© 2024 Trio-Soft. All rights reserved.</p>-->        <!--                </footer>-->        <!--            </div>-->        <!--        </footer>-->    </div>
+        <trio-site-footer></trio-site-footer>
+    </div>
 </div>
 </body>
 </html>

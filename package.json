@@ -4,10 +4,16 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build:ts": "tsc",
+    "build:css": "npx @tailwindcss/cli -i ./src/styles.css -o ./assets/css/tailwind.css",
+    "build": "npm run build:ts && npm run build:css"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.11",
+    "lit": "^3.3.2",
+    "tailwindcss": "^4.2.1",
     "typescript": "^5.5.3"
   },
   "private": true
