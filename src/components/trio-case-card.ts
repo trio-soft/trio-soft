@@ -38,8 +38,15 @@ export class TrioCaseCard extends LitElement {
       flex: 1;
       gap: 8px;
     }
+    .case-card.horizontal .case-card-client {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0e141b;
+    }
     .case-card.horizontal .case-card-title {
-      font-size: 18px;
+      font-size: 16px;
+      font-weight: 400;
+      color: #0e141b;
     }
 
     @media (max-width: 768px) {
