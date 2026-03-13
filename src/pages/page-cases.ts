@@ -13,7 +13,7 @@ export class PageCases extends LitElement {
       padding: 1.25rem 0;
     }
     .container {
-      max-width: 960px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem;
     }

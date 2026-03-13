@@ -30,11 +30,11 @@ export class TrioCaseList extends LitElement {
     .case-list-vertical .case-list-inner {
       display: flex;
       flex-direction: column;
-      gap: 16px;
     }
   `;
 
   render() {
+    const isHorizontal = !this.scrollable;
     const cls = this.scrollable ? 'case-list-scrollable' : 'case-list-vertical';
     return html`
       <div class="${cls}">
@@ -44,6 +44,8 @@ export class TrioCaseList extends LitElement {
               .image="${c.image}"
               .title="${c.title}"
               .description="${c.description}"
+              .client="${c.client || ''}"
+              .horizontal="${isHorizontal}"
             ></trio-case-card>
           `)}
         </div>
