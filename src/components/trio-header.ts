@@ -21,8 +21,9 @@ export class TrioHeader extends LitElement {
       justify-content: space-between;
       white-space: nowrap;
       border-bottom: 1px solid #e7edf3;
-      padding: 12px 40px;
+      padding: 12px 16px;
       gap: 1rem;
+      background: #f8fafc;
     }
     .header-brand { display: flex; align-items: center; gap: 16px; color: #0e141b; }
     .header-logo { width: 16px; height: 16px; }

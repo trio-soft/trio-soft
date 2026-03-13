@@ -14,10 +14,10 @@ export class PageHome extends LitElement {
   static styles = css`
     :host { display: block; }
     .section-title { color: #0e141b; font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; padding: 20px 16px 12px; margin: 0; }
-    .intro-wrap { display: flex; flex-direction: column; gap: 40px; padding: 40px 16px; }
-    .intro-head { display: flex; flex-direction: column; gap: 16px; }
-    .intro-title { color: #0e141b; font-size: clamp(32px, 4vw, 36px); font-weight: 900; line-height: 1.2; letter-spacing: -0.033em; margin: 0; max-width: 720px; }
-    .intro-desc { color: #0e141b; font-size: 16px; line-height: 1.5; margin: 0; max-width: 720px; }
+    .intro-wrap { display: flex; flex-direction: column; gap: 32px; padding: 20px 16px; }
+    .intro-head { display: flex; flex-direction: column; gap: 12px; }
+    .intro-title { color: #0e141b; font-size: 28px; font-weight: 900; line-height: 1.2; letter-spacing: -0.033em; margin: 0; max-width: 720px; }
+    .intro-desc { color: #0e141b; font-size: 16px; line-height: 1.5; margin: 0; max-width: 720px; opacity: 0.8; }
     .news-list { display: flex; flex-direction: column; }
   `;
 
