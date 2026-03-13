@@ -17,7 +17,7 @@ export class TrioApp extends LitElement {
   private route = window.location.hash || '#/';
 
   @state()
-  private lang = this.route.startsWith('#/jp') ? 'jp' : 'en';
+  public lang = this.route.startsWith('#/jp') ? 'jp' : 'en';
 
   static styles = css`
     :host {

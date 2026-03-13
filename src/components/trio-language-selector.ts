@@ -1,34 +1,146 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-import { CARET_RIGHT_SVG } from '../icons.js';
 
 @customElement('trio-language-selector')
 export class TrioLanguageSelector extends LitElement {
-  @property({ type: Object }) content: any = {};
+  @property({ type: Object }) data: any = {};
 
   static styles = css`
-    :host { display: block; }
-    .wrap { display: flex; flex: 1; justify-content: center; align-items: center; padding: 20px 16px; }
-    .inner { display: flex; flex-direction: column; max-width: 960px; width: 100%; }
-    .center { display: flex; flex-direction: column; gap: 32px; align-items: center; justify-content: center; padding: 80px 0; }
-    .text { display: flex; flex-direction: column; gap: 16px; text-align: center; }
-    .title { color: #0e141b; font-size: 36px; font-weight: 900; letter-spacing: -0.033em; margin: 0; }
-    .subtitle { color: #4d7399; font-size: 16px; margin: 0; }
-    .list { display: flex; flex-direction: column; gap: 16px; width: 100%; max-width: 448px; }
-    .card { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-radius: 12px; border: 1px solid #d0dbe7; background: white; padding: 24px; text-decoration: none; color: inherit; }
-    .left { display: flex; align-items: center; gap: 16px; }
-    .flag { display: flex; height: 48px; width: 48px; align-items: center; justify-content: center; border-radius: 9999px; background: #e7edf3; font-size: 24px; }
-    .name { color: #0e141b; font-size: 18px; font-weight: 700; margin: 0; }
-    .desc { color: #4d7399; font-size: 14px; margin: 0; }
+    :host {
+      display: block;
+      height: 100vh;
+      background-color: #f8fafc;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.25rem;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      width: 100%;
+      max-width: 960px;
+    }
+    .header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .title {
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: #0e141b;
+      margin: 0;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: #4d7399;
+      margin: 0;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 448px;
+    }
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid #d0dbe7;
+      background-color: white;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    .card:hover {
+      background-color: #f8fafc;
+    }
+    .lang-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .flag-circle {
+      display: flex;
+      width: 3rem;
+      height: 3rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      background-color: #e7edf3;
+      font-size: 1.5rem;
+    }
+    .lang-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .lang-name {
+      font-size: 1.125rem;
+      font-weight: bold;
+      color: #0e141b;
+      margin: 0;
+    }
+    .lang-desc {
+      font-size: 0.875rem;
+      color: #4d7399;
+      margin: 0;
+    }
+    .caret {
+      color: #0e141b;
+    }
   `;
 
-  renderCard(item: any) {
-    return html`<a class="card" href="${item.href}"><div class="left"><div class="flag">${item.flag}</div><div><p class="name">${item.name}</p><p class="desc">${item.desc}</p></div></div><div>${unsafeHTML(CARET_RIGHT_SVG)}</div></a>`;
-  }
-
   render() {
-    const c = this.content;
-    return html`<div class="wrap"><div class="inner"><div class="center"><div class="text"><h1 class="title">${c.title}</h1><p class="subtitle">${c.subtitle}</p></div><div class="list">${this.renderCard(c.en)}${this.renderCard(c.jp)}</div></div></div></div>`;
+    return html`
+      <div class="wrapper">
+        <div class="content">
+          <div class="header">
+            <h1 class="title">${this.data.title}</h1>
+            <p class="subtitle">${this.data.subtitle}</p>
+          </div>
+          <div class="options">
+            <a href="${this.data.en.href}" class="card">
+              <div class="lang-info">
+                <div class="flag-circle">${this.data.en.flag}</div>
+                <div class="lang-text">
+                  <h3 class="lang-name">${this.data.en.name}</h3>
+                  <p class="lang-desc">${this.data.en.desc}</p>
+                </div>
+              </div>
+              <div class="caret">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+                </svg>
+              </div>
+            </a>
+            <a href="${this.data.jp.href}" class="card">
+              <div class="lang-info">
+                <div class="flag-circle">${this.data.jp.flag}</div>
+                <div class="lang-text">
+                  <h3 class="lang-name">${this.data.jp.name}</h3>
+                  <p class="lang-desc">${this.data.jp.desc}</p>
+                </div>
+              </div>
+              <div class="caret">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
   }
 }

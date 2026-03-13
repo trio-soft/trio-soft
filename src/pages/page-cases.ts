@@ -1,30 +1,105 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import '../components/trio-case-list';
 
 @customElement('page-cases')
 export class PageCases extends LitElement {
-  @property({ type: Object }) data: any = {};
   @property({ type: String }) lang = 'en';
+  @property({ type: Object }) data: any = {};
+
   static styles = css`
-    :host { display: block; }
-    .page-title { color: #111518; font-size: 32px; font-weight: 700; line-height: 1.2; padding: 16px; margin: 0; }
-    .section-title { color: #111518; font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; padding: 20px 16px 12px; margin: 0; }
-    .item { padding: 16px; }
-    .row { display: flex; align-items: stretch; justify-content: space-between; gap: 16px; border-radius: 12px; }
-    .text { display: flex; flex-direction: column; gap: 4px; flex: 2; }
-    .client, .desc { color: #5e7387; font-size: 14px; line-height: 1.5; margin: 0; }
-    .title { color: #111518; font-size: 16px; font-weight: 700; line-height: 1.3; margin: 0; }
-    .img-wrap { flex: 1; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; }
-    .img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .actions { display: flex; justify-content: center; }
-    .actions-inner { display: flex; flex: 1; gap: 12px; flex-wrap: wrap; padding: 12px 16px; max-width: 480px; justify-content: center; }
-    .btn { display: inline-flex; min-width: 84px; flex: 1; align-items: center; justify-content: center; border-radius: 9999px; height: 40px; padding: 0 16px; font-size: 14px; font-weight: 700; text-decoration: none; }
-    .btn.primary { background: #bcd1e5; color: #111518; }
-    .btn.secondary { background: #eaedf0; color: #111518; }
+    :host {
+      display: block;
+      padding: 1.25rem 0;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .header-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 1rem;
+    }
+    .page-title {
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      color: #0e141b;
+      margin: 0;
+      min-width: 288px;
+    }
+    .footer-actions {
+      display: flex;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+    }
+    .actions-container {
+      display: flex;
+      flex: 1;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      max-width: 480px;
+      justify-content: center;
+    }
+    .btn {
+      display: flex;
+      min-width: 84px;
+      max-width: 480px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 9999px;
+      height: 2.5rem;
+      padding: 0 1rem;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1.5;
+      letter-spacing: 0.015em;
+      border: none;
+      flex-grow: 1;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background-color: #bcd1e5;
+      color: #111518;
+    }
+    .btn-secondary {
+      background-color: #eaedf0;
+      color: #111518;
+    }
+    .truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   `;
+
   render() {
-    const c = this.data.cases;
-    const contactHref = this.lang === 'jp' ? '#/jp/contact' : '#/contact';
-    return html`<p class="page-title">${c.pageTitle}</p>${c.items.map((item: any) => html`<h2 class="section-title">${item.client}</h2><div class="item"><div class="row"><div class="text"><p class="client">${item.client}</p><p class="title">${item.title}</p><p class="desc">${item.description}</p></div><div class="img-wrap"><img class="img" src="${item.image}" alt="${item.client}" /></div></div></div>`)}<div class="actions"><div class="actions-inner"><a class="btn primary" href="#">${c.viewAll}</a><a class="btn secondary" href="${contactHref}">${c.contactUs}</a></div></div>`;
+    return html`
+      <div class="container">
+        <div class="header-section">
+          <h1 class="page-title">${this.data.pageTitle}</h1>
+        </div>
+
+        <trio-case-list .cases=${this.data.items} .scrollable=${false}></trio-case-list>
+
+        <div class="footer-actions">
+          <div class="actions-container">
+            <button class="btn btn-primary">
+              <span class="truncate">${this.data.viewAll}</span>
+            </button>
+            <a href="${this.lang === 'jp' ? '#/jp/contact' : '#/contact'}" class="btn btn-secondary">
+              <span class="truncate">${this.data.contactUs}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
   }
 }
