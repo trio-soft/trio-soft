@@ -182,7 +182,7 @@
       font-weight: 400;
       margin: 0;
     }
-  `;le([l({type:String})],D.prototype,"privacyPolicy",2);le([l({type:String})],D.prototype,"termsOfService",2);le([l({type:String})],D.prototype,"copyright",2);D=le([v("trio-footer")],D);var Rt=Object.defineProperty,Gt=Object.getOwnPropertyDescriptor,I=(r,e,i,s)=>{for(var t=s>1?void 0:s?Gt(e,i):e,a=r.length-1,o;a>=0;a--)(o=r[a])&&(t=(s?o(e,i,t):o(t))||t);return s&&t&&Rt(e,i,t),t};let _=class extends u{constructor(){super(...arguments),this.title="",this.subtitle="",this.buttonText="",this.buttonHref="",this.backgroundImage="/img/hero-en.jpg"}render(){return p`
+  `;le([l({type:String})],D.prototype,"privacyPolicy",2);le([l({type:String})],D.prototype,"termsOfService",2);le([l({type:String})],D.prototype,"copyright",2);D=le([v("trio-footer")],D);var Rt=Object.defineProperty,Gt=Object.getOwnPropertyDescriptor,I=(r,e,i,s)=>{for(var t=s>1?void 0:s?Gt(e,i):e,a=r.length-1,o;a>=0;a--)(o=r[a])&&(t=(s?o(e,i,t):o(t))||t);return s&&t&&Rt(e,i,t),t};let _=class extends u{constructor(){super(...arguments),this.title="",this.subtitle="",this.buttonText="",this.buttonHref="",this.backgroundImage="/hero-en.jpg"}render(){return p`
       <div class="hero-container">
         <div class="hero-banner">
           <img class="hero-image" src="${this.backgroundImage}" alt="" />

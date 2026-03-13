@@ -7,7 +7,7 @@ export class TrioHero extends LitElement {
   @property({ type: String }) subtitle = '';
   @property({ type: String }) buttonText = '';
   @property({ type: String }) buttonHref = '';
-  @property({ type: String }) backgroundImage = '/img/hero-en.jpg';
+  @property({ type: String }) backgroundImage = '/hero-en.jpg';
 
   static styles = css`
     :host { display: block; }
