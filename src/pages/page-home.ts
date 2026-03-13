@@ -22,7 +22,8 @@ export class PageHome extends LitElement {
   `;
 
   render() {
-    const h = this.data.home;
+    const h = this.data;
+    if (!h) return html`<div>Loading...</div>`;
     const servicesHref = this.lang === 'jp' ? '#/jp/services' : '#/services';
     const contactHref = this.lang === 'jp' ? '#/jp/contact' : '#/contact';
     const heroImage = this.lang === 'jp' ? '/img/hero-jp.jpg' : '/img/hero-en.jpg';

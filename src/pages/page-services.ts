@@ -17,7 +17,8 @@ export class PageServices extends LitElement {
     .grid-wrap { padding: 16px; }
   `;
   render() {
-    const s = this.data.services;
+    const s = this.data;
+    if (!s) return html`<div>Loading...</div>`;
     const contactHref = this.lang === 'jp' ? '#/jp/contact' : '#/contact';
     return html`<div class="page-head"><div class="page-head-box"><p class="page-title">${s.pageTitle}</p><p class="page-subtitle">${s.pageSubtitle}</p></div></div>${s.sections.map((section: any) => html`<h2 class="section-title">${section.title}</h2><div class="grid-wrap"><trio-service-grid .services=${section.cards}></trio-service-grid></div>`)}<trio-cta-section .title=${s.ctaTitle} .subtitle=${s.ctaSubtitle} .buttonText=${s.ctaButton} .buttonHref=${contactHref} tone="blue"></trio-cta-section>`;
   }
