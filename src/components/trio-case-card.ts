@@ -8,6 +8,7 @@ export class TrioCaseCard extends LitElement {
   @property({ type: String }) description = '';
   @property({ type: String }) client = '';
   @property({ type: Boolean }) horizontal = false;
+  @property({ type: String }) lang = 'en';
 
   static styles = css`
     :host { display: block; width: 100%; }
@@ -53,14 +54,17 @@ export class TrioCaseCard extends LitElement {
   `;
 
   render() {
+    const href = this.lang === 'jp' ? '#/jp/cases' : '#/cases';
     return html`
       <div class="case-card ${this.horizontal ? 'horizontal' : ''}">
         <div class="case-card-image-wrap">
-          <img class="case-card-image" src="${this.image}" alt="${this.title}" />
+          <a href="${href}">
+            <img class="case-card-image" src="${this.image}" alt="${this.title}" />
+          </a>
         </div>
         <div class="case-card-body">
           ${this.client ? html`<p class="case-card-client">${this.client}</p>` : ''}
-          <p class="case-card-title">${this.title}</p>
+          <p class="case-card-title"><a href="${href}" style="text-decoration: none; color: inherit;">${this.title}</a></p>
           <p class="case-card-description">${this.description}</p>
         </div>
       </div>

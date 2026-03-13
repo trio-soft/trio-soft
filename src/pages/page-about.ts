@@ -135,6 +135,7 @@ export class PageAbout extends LitElement {
           .title=${this.data.ctaTitle} 
           .subtitle=${this.data.ctaSubtitle}
           .buttonText=${this.data.ctaButton}
+          .buttonHref=${this.lang === 'jp' ? '#/jp/contact' : '#/contact'}
           .lang=${this.lang}>
         </trio-cta-section>
       </div>

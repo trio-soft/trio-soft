@@ -87,13 +87,13 @@ export class PageCases extends LitElement {
           <h1 class="page-title">${this.data.pageTitle}</h1>
         </div>
 
-        <trio-case-list .cases=${this.data.items} .scrollable=${false}></trio-case-list>
+        <trio-case-list .cases=${this.data.items} .scrollable=${false} .lang=${this.lang}></trio-case-list>
 
         <div class="footer-actions">
           <div class="actions-container">
-            <button class="btn btn-primary">
+            <a href="${this.lang === 'jp' ? '#/jp/cases' : '#/cases'}" class="btn btn-primary">
               <span class="truncate">${this.data.viewAll}</span>
-            </button>
+            </a>
             <a href="${this.lang === 'jp' ? '#/jp/contact' : '#/contact'}" class="btn btn-secondary">
               <span class="truncate">${this.data.contactUs}</span>
             </a>

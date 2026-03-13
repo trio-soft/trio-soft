@@ -7,6 +7,7 @@ import type { CaseCard } from '../data/en.js';
 export class TrioCaseList extends LitElement {
   @property({ type: Array }) cases: CaseCard[] = [];
   @property({ type: Boolean }) scrollable = false;
+  @property({ type: String }) lang = 'en';
 
   static styles = css`
     :host {
@@ -46,6 +47,7 @@ export class TrioCaseList extends LitElement {
               .description="${c.description}"
               .client="${c.client || ''}"
               .horizontal="${isHorizontal}"
+              .lang="${this.lang}"
             ></trio-case-card>
           `)}
         </div>
