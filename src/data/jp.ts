@@ -56,7 +56,7 @@ export const jp: SiteData = {
   home: {
     heroTitle: 'トリオソフト：あなたのデジタル未来を設計します',
     heroSubtitle: 'システムアーキテクチャコンサルティング、ソフトウェア・アプリ設計、AIソリューションを専門とし、デジタル時代のビジネス成長を支援します。',
-    heroButton: 'お問い合わせ',
+    heroButton: 'サービスを見る',
     expertiseTitle: '私たちの専門分野',
     expertiseSubtitle: 'ビジネスニーズに応える包括的なソリューション',
     expertiseDescription: 'アイデア立案から導入・運用まで、トリオソフトは成功のためのフルサービスを提供します。',

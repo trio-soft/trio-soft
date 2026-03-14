@@ -92,7 +92,7 @@ export const en = {
   home: {
     heroTitle: 'Trio-Soft: Architecting Your Digital Future',
     heroSubtitle: 'We specialize in system architecture consulting, software and app design, and AI solutions, helping businesses thrive in the digital age.',
-    heroButton: 'Get in Touch',
+    heroButton: 'Explore Our Services',
     expertiseTitle: 'Our Expertise',
     expertiseSubtitle: 'Comprehensive Solutions for Your Business Needs',
     expertiseDescription: 'From initial concept to deployment and beyond, Trio-Soft offers a full suite of services to ensure your success.',
