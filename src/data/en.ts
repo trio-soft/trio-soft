@@ -92,7 +92,7 @@ export const en = {
   home: {
     heroTitle: 'Trio-Soft: Architecting Your Digital Future',
     heroSubtitle: 'We specialize in system architecture consulting, software and app design, and AI solutions, helping businesses thrive in the digital age.',
-    heroButton: 'Explore Our Services',
+    heroButton: 'Get in Touch',
     expertiseTitle: 'Our Expertise',
     expertiseSubtitle: 'Comprehensive Solutions for Your Business Needs',
     expertiseDescription: 'From initial concept to deployment and beyond, Trio-Soft offers a full suite of services to ensure your success.',
@@ -217,7 +217,7 @@ export const en = {
       },
     ] as CaseCard[],
     viewAll: 'View All Case Studies',
-    contactUs: 'Contact Us',
+    contactUs: 'Get in Touch',
   },
   about: {
     pageTitle: 'About Trio-Soft',
@@ -237,7 +237,7 @@ export const en = {
     ] as ValueCard[],
     ctaTitle: 'Ready to transform your business with cutting-edge technology?',
     ctaSubtitle: 'Reach out to us today to discuss your project and explore how Trio-Soft can help you achieve your goals.',
-    ctaButton: 'Contact Us',
+    ctaButton: 'Get in Touch',
   },
   contact: {
     pageTitle: 'Contact Us',
@@ -253,7 +253,7 @@ export const en = {
     submit: 'Submit',
     infoTitle: 'Contact Information',
     address: 'Address: Room 414, 4th Floor, Helios Kannai Building, 3-21-2 Motohama-cho, Naka-ku, Yokohama-shi, Kanagawa, Japan',
-    phone: 'Phone: 09-1030-9865',
+    phone: 'Phone: +886-9-1030-9865',
     email: 'Email: contact@trio-soft.biz',
   },
   language: {

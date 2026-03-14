@@ -56,7 +56,7 @@ export const jp: SiteData = {
   home: {
     heroTitle: 'トリオソフト：あなたのデジタル未来を設計します',
     heroSubtitle: 'システムアーキテクチャコンサルティング、ソフトウェア・アプリ設計、AIソリューションを専門とし、デジタル時代のビジネス成長を支援します。',
-    heroButton: 'サービスを見る',
+    heroButton: 'お問い合わせ',
     expertiseTitle: '私たちの専門分野',
     expertiseSubtitle: 'ビジネスニーズに応える包括的なソリューション',
     expertiseDescription: 'アイデア立案から導入・運用まで、トリオソフトは成功のためのフルサービスを提供します。',
@@ -217,7 +217,7 @@ export const jp: SiteData = {
     submit: '送信',
     infoTitle: '連絡先情報',
     address: '住所：〒231-0004 神奈川県横浜市中区本浜町3-21-2 ヘリオス関内ビル4階414号室',
-    phone: '電話：09-1030-9865',
+    phone: '電話：+886-9-1030-9865',
     email: 'メール：contact@trio-soft.biz',
   },
   language: {
