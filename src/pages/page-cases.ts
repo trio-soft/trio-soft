@@ -38,45 +38,21 @@ export class PageCases extends LitElement {
       justify-content: center;
       padding: 0.75rem 1rem;
     }
-    .actions-container {
-      display: flex;
-      flex: 1;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      max-width: 480px;
-      justify-content: center;
-    }
-    .btn {
-      display: flex;
-      min-width: 84px;
-      max-width: 480px;
+    .btn-contact {
+      display: inline-flex;
       cursor: pointer;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
       border-radius: 9999px;
       height: 2.5rem;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
       font-size: 14px;
       font-weight: bold;
-      line-height: 1.5;
       letter-spacing: 0.015em;
       border: none;
-      flex-grow: 1;
       text-decoration: none;
-    }
-    .btn-primary {
-      background-color: #bcd1e5;
-      color: #111518;
-    }
-    .btn-secondary {
-      background-color: #eaedf0;
-      color: #111518;
-    }
-    .truncate {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      background-color: #1572cf;
+      color: #f8fafc;
     }
   `;
 
@@ -90,14 +66,9 @@ export class PageCases extends LitElement {
         <trio-case-list .cases=${this.data.items} .scrollable=${false} .lang=${this.lang}></trio-case-list>
 
         <div class="footer-actions">
-          <div class="actions-container">
-            <a href="${this.lang === 'jp' ? '#/jp/cases' : '#/cases'}" class="btn btn-primary">
-              <span class="truncate">${this.data.viewAll}</span>
-            </a>
-            <a href="${this.lang === 'jp' ? '#/jp/contact' : '#/contact'}" class="btn btn-secondary">
-              <span class="truncate">${this.data.contactUs}</span>
-            </a>
-          </div>
+          <a href="${this.lang === 'jp' ? '#/jp/contact' : '#/contact'}" class="btn-contact">
+            ${this.data.contactUs}
+          </a>
         </div>
       </div>
     `;

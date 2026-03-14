@@ -36,7 +36,7 @@ export class TrioHero extends LitElement {
       inset: 0;
       background: linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
     }
-    .hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 24px; }
+    .hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
     .hero-text { display: flex; flex-direction: column; gap: 8px; }
     .hero-title {
       color: white; font-size: clamp(36px, 5vw, 48px); font-weight: 900;
