@@ -65,7 +65,6 @@ export class TrioHeader extends LitElement {
             ${this.data.nav.map(item => html`<a class="header-nav-link" href="${item.href}">${item.label}</a>`)}
           </nav>
           <div class="header-actions">
-            <a class="header-cta-btn" href="${contactHref}">${this.data.getStarted}</a>
             <a class="header-lang-btn" href="${langHref}" title="Change language">${unsafeHTML(GLOBE_SVG)}</a>
           </div>
         </div>

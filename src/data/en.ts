@@ -51,6 +51,44 @@ export const en = {
     termsOfService: 'Terms of Service',
     copyright: '© 2025 Trio-Soft. All rights reserved.',
   },
+  privacy: {
+    pageTitle: 'Privacy Policy',
+    content: `
+      <h3>1. Introduction</h3>
+      <p>Trio-Soft ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.</p>
+      <h3>2. Information We Collect</h3>
+      <p>We may collect personal information that you provide to us, such as your name, email address, and any other information you choose to provide when you contact us.</p>
+      <h3>3. How We Use Your Information</h3>
+      <p>We use the information we collect to respond to your inquiries, provide our services, and improve our website.</p>
+      <h3>4. Information Sharing</h3>
+      <p>We do not sell or rent your personal information to third parties. We may share your information with service providers who assist us in operating our website or providing our services.</p>
+      <h3>5. Security</h3>
+      <p>We take reasonable measures to protect your information from unauthorized access or disclosure.</p>
+      <h3>6. Changes to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+      <h3>7. Contact Us</h3>
+      <p>If you have any questions about this Privacy Policy, please contact us at contact@trio-soft.biz.</p>
+    `,
+  },
+  terms: {
+    pageTitle: 'Terms of Service',
+    content: `
+      <h3>1. Acceptance of Terms</h3>
+      <p>By accessing or using our website, you agree to be bound by these Terms of Service.</p>
+      <h3>2. Use of the Website</h3>
+      <p>You agree to use the website only for lawful purposes and in accordance with these Terms.</p>
+      <h3>3. Intellectual Property</h3>
+      <p>All content on this website, including text, graphics, and logos, is the property of Trio-Soft and is protected by intellectual property laws.</p>
+      <h3>4. Limitation of Liability</h3>
+      <p>Trio-Soft shall not be liable for any damages arising from the use of or inability to use our website.</p>
+      <h3>5. Governing Law</h3>
+      <p>These Terms shall be governed by and construed in accordance with the laws of Japan.</p>
+      <h3>6. Changes to Terms</h3>
+      <p>We reserve the right to modify these Terms at any time. Your continued use of the website after any changes constitutes acceptance of the new Terms.</p>
+      <h3>7. Contact Us</h3>
+      <p>If you have any questions about these Terms, please contact us at contact@trio-soft.biz.</p>
+    `,
+  },
   home: {
     heroTitle: 'Trio-Soft: Architecting Your Digital Future',
     heroSubtitle: 'We specialize in system architecture consulting, software and app design, and AI solutions, helping businesses thrive in the digital age.',
@@ -216,7 +254,7 @@ export const en = {
     infoTitle: 'Contact Information',
     address: 'Address: Room 414, 4th Floor, Helios Kannai Building, 3-21-2 Motohama-cho, Naka-ku, Yokohama-shi, Kanagawa, Japan',
     phone: 'Phone: 09-1030-9865',
-    email: 'Email: info@triosoft.com',
+    email: 'Email: contact@trio-soft.biz',
   },
   language: {
     title: 'Select Language / 言語を選択',

@@ -91,9 +91,6 @@ export class PageCases extends LitElement {
 
         <div class="footer-actions">
           <div class="actions-container">
-            <a href="${this.lang === 'jp' ? '#/jp/cases' : '#/cases'}" class="btn btn-primary">
-              <span class="truncate">${this.data.viewAll}</span>
-            </a>
             <a href="${this.lang === 'jp' ? '#/jp/contact' : '#/contact'}" class="btn btn-secondary">
               <span class="truncate">${this.data.contactUs}</span>
             </a>
