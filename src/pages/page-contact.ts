@@ -1,10 +1,17 @@
 import { LitElement, html, css } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property, state, query } from 'lit/decorators.js';
+
+const FORMSPREE_URL = 'https://formspree.io/f/mreyloqo';
 
 @customElement('page-contact')
 export class PageContact extends LitElement {
   @property({ type: String }) lang = 'en';
   @property({ type: Object }) data: any = {};
+
+  @state() private _status: 'idle' | 'submitting' | 'success' | 'error' = 'idle';
+  @state() private _errorMessage = '';
+
+  @query('form') private _form!: HTMLFormElement;
 
   static styles = css`
     :host {
@@ -71,11 +78,12 @@ export class PageContact extends LitElement {
       height: 3.5rem;
       padding: 0.9375rem;
       font-size: 16px;
+      font-family: inherit;
       box-sizing: border-box;
     }
     .form-input:focus {
       outline: none;
-      border-color: #d5dce2;
+      border-color: #1572cf;
     }
     .form-textarea {
       min-height: 9rem;
@@ -85,22 +93,40 @@ export class PageContact extends LitElement {
       display: flex;
       padding: 0.75rem 1rem;
       justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
     }
     .btn-submit {
       display: flex;
       min-width: 84px;
-      max-width: 480px;
       cursor: pointer;
       align-items: center;
       justify-content: center;
       border-radius: 9999px;
       height: 2.5rem;
-      padding: 0 1rem;
-      background-color: #bcd1e5;
-      color: #111518;
+      padding: 0 1.5rem;
+      background-color: #1572cf;
+      color: #f8fafc;
       font-size: 14px;
       font-weight: bold;
       border: none;
+      font-family: inherit;
+    }
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .status-message {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0 1rem;
+    }
+    .status-success {
+      color: #16a34a;
+    }
+    .status-error {
+      color: #dc2626;
     }
     .section-heading {
       font-size: 22px;
@@ -136,7 +162,56 @@ export class PageContact extends LitElement {
     }
   `;
 
+  private async _handleSubmit(e: Event) {
+    e.preventDefault();
+    this._status = 'submitting';
+    this._errorMessage = '';
+
+    const formData = new FormData(this._form);
+
+    try {
+      const response = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' },
+      });
+
+      if (response.ok) {
+        this._status = 'success';
+        this._form.reset();
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          this._errorMessage = data.errors.map((err: any) => err.message).join(', ');
+        } else {
+          this._errorMessage = this.lang === 'jp'
+            ? 'フォームの送信中に問題が発生しました。'
+            : 'Oops! There was a problem submitting your form.';
+        }
+        this._status = 'error';
+      }
+    } catch {
+      this._errorMessage = this.lang === 'jp'
+        ? 'フォームの送信中に問題が発生しました。'
+        : 'Oops! There was a problem submitting your form.';
+      this._status = 'error';
+    }
+  }
+
+  private _renderStatusMessage() {
+    if (this._status === 'success') {
+      const msg = this.lang === 'jp' ? 'お問い合わせありがとうございます！' : 'Thanks for your submission!';
+      return html`<p class="status-message status-success">${msg}</p>`;
+    }
+    if (this._status === 'error') {
+      return html`<p class="status-message status-error">${this._errorMessage}</p>`;
+    }
+    return '';
+  }
+
   render() {
+    const isSubmitting = this._status === 'submitting';
+
     return html`
       <div class="container">
         <div class="header-section">
@@ -146,34 +221,40 @@ export class PageContact extends LitElement {
           </div>
         </div>
 
-        <div class="form-group">
-          <label>
-            <p class="field-label">${this.data.nameLabel}</p>
-            <input class="form-input" placeholder="${this.data.namePlaceholder}" />
-          </label>
-        </div>
-        <div class="form-group">
-          <label>
-            <p class="field-label">${this.data.emailLabel}</p>
-            <input class="form-input" placeholder="${this.data.emailPlaceholder}" />
-          </label>
-        </div>
-        <div class="form-group">
-          <label>
-            <p class="field-label">${this.data.subjectLabel}</p>
-            <input class="form-input" placeholder="${this.data.subjectPlaceholder}" />
-          </label>
-        </div>
-        <div class="form-group">
-          <label>
-            <p class="field-label">${this.data.messageLabel}</p>
-            <textarea class="form-input form-textarea" placeholder="${this.data.messagePlaceholder}"></textarea>
-          </label>
-        </div>
+        <form @submit=${this._handleSubmit}>
+          <div class="form-group">
+            <label>
+              <p class="field-label">${this.data.nameLabel}</p>
+              <input class="form-input" name="name" placeholder="${this.data.namePlaceholder}" required />
+            </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <p class="field-label">${this.data.emailLabel}</p>
+              <input class="form-input" name="email" type="email" placeholder="${this.data.emailPlaceholder}" required />
+            </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <p class="field-label">${this.data.subjectLabel}</p>
+              <input class="form-input" name="subject" placeholder="${this.data.subjectPlaceholder}" />
+            </label>
+          </div>
+          <div class="form-group">
+            <label>
+              <p class="field-label">${this.data.messageLabel}</p>
+              <textarea class="form-input form-textarea" name="message" placeholder="${this.data.messagePlaceholder}" required></textarea>
+            </label>
+          </div>
 
-        <div class="btn-container">
-          <button class="btn-submit">${this.data.submit}</button>
-        </div>
+          <div class="btn-container">
+            <button class="btn-submit" type="submit" ?disabled=${isSubmitting}>
+              ${isSubmitting ? (this.lang === 'jp' ? '送信中...' : 'Submitting...') : this.data.submit}
+            </button>
+          </div>
+        </form>
+
+        ${this._renderStatusMessage()}
 
         <h2 class="section-heading">${this.data.infoTitle}</h2>
         <p class="info-text">${this.data.address}</p>
