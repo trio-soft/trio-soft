@@ -1,1 +1,2 @@
-console.log('Happy developing ✨')
+import './fonts.css';
+import './trio-app.js';

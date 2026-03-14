@@ -1,0 +1,191 @@
+// Japanese content data
+import type { SiteData } from './en.js';
+
+export const jp: SiteData = {
+  brand: 'トリオソフト',
+  nav: [
+    { label: 'サービス', href: '#/jp/services' },
+    { label: '導入事例', href: '#/jp/cases' },
+    { label: '会社概要', href: '#/jp/about' },
+    { label: 'お問い合わせ', href: '#/jp/contact' },
+  ],
+  getStarted: 'Get Started',
+  footer: {
+    privacyPolicy: 'プライバシーポリシー',
+    termsOfService: '利用規約',
+    copyright: '© 2025 Trio-Soft. All rights reserved.',
+  },
+  home: {
+    heroTitle: 'トリオソフト：あなたのデジタル未来を設計します',
+    heroSubtitle: 'システムアーキテクチャコンサルティング、ソフトウェア・アプリ設計、AIソリューションを専門とし、デジタル時代のビジネス成長を支援します。',
+    heroButton: 'サービスを見る',
+    expertiseTitle: '私たちの専門分野',
+    expertiseSubtitle: 'ビジネスニーズに応える包括的なソリューション',
+    expertiseDescription: 'アイデア立案から導入・運用まで、トリオソフトは成功のためのフルサービスを提供します。',
+    services: [
+      {
+        icon: 'gear',
+        title: 'システムアーキテクチャコンサルティング',
+        description: 'ビジネス目標に合わせて堅牢でスケーラブル、かつ効率的なシステムアーキテクチャを構築します。',
+      },
+      {
+        icon: 'app-window',
+        title: 'ソフトウェア・アプリ設計',
+        description: '直感的で魅力的なソフトウェアやアプリケーションを設計し、ユーザー体験を向上させ成長を促進します。',
+      },
+      {
+        icon: 'robot',
+        title: 'AIソリューション',
+        description: 'AIの力を活用し、業務プロセスを自動化し新たなビジネスチャンスを創出します。',
+      },
+    ],
+    casesTitle: '事例紹介',
+    cases: [
+      {
+        image: '/case-ecommerce.jpg',
+        title: '小売業者向けECプラットフォーム',
+        description: '大手小売業者向けにスケーラブルなECプラットフォームを開発し、オンライン売上が30%増加しました。',
+      },
+      {
+        image: '/case-fitness.jpg',
+        title: 'フィットネストラッキングアプリ',
+        description: '使いやすいフィットネストラッキングアプリを設計・開発し、アプリストアで4.8の高評価を獲得しました。',
+      },
+      {
+        image: '/case-analytics.jpg',
+        title: 'AI搭載分析ダッシュボード',
+        description: '金融機関向けにAI搭載の分析ダッシュボードを開発し、実用的なインサイトと意思決定の質向上を実現しました。',
+      },
+    ],
+    newsTitle: '最新情報',
+    news: [
+      {
+        category: 'テックインサイト',
+        title: 'ビジネスにおけるAIの未来',
+        description: 'さまざまな業界でのAIの最新動向と応用事例をご紹介します。',
+        image: '/news-ai.jpg',
+      },
+      {
+        category: 'デザイントレンド',
+        title: 'ユーザー中心設計の原則',
+        description: 'ユーザー中心設計の重要な原則と、それが製品の成功にどう役立つかを解説します。',
+        image: '/news-design.jpg',
+      },
+    ],
+    ctaTitle: 'ビジネス変革の準備はできていますか？',
+    ctaButton: 'お問い合わせ',
+  },
+  services: {
+    pageTitle: 'サービス一覧',
+    pageSubtitle: 'トリオソフトは、革新的なテクノロジーソリューションを通じてビジネスを支援する包括的なサービスを提供しています。戦略的なコンサルティングから最先端のAIアプリケーションまで、お客様の目標達成をサポートします。',
+    sections: [
+      {
+        title: 'コンサルティング＆戦略',
+        cards: [
+          { icon: 'presentation-chart', title: '情報システムコンサルティング', description: '情報システムの最適化に関する専門的なガイダンスを提供します。' },
+          { icon: 'gear', title: 'コンピュータソフトウェアソリューション', description: '計画から保守まで包括的なソフトウェアソリューションを提供します。' },
+          { icon: 'cloud', title: 'クラウドサービス戦略', description: 'お客様のニーズに合わせたクラウドサービスの戦略的な計画と運用を行います。' },
+          { icon: 'lightbulb', title: 'ビジネス効率化', description: 'システム開発とサポートでビジネスプロセスを効率化します。' },
+        ],
+      },
+      {
+        title: '開発＆実装',
+        cards: [
+          { icon: 'globe', title: 'ウェブ・アプリ開発', description: '成果を生み出すウェブサイトとウェブアプリケーションの作成・管理を行います。' },
+          { icon: 'app-window', title: 'ITインフラ管理', description: '堅牢なITインフラの設計・構築・サポートを提供します。' },
+          { icon: 'device-mobile', title: 'モバイルアプリケーションソリューション', description: 'コンセプトから配信まで革新的なモバイルアプリケーションを開発します。' },
+          { icon: 'code', title: 'プログラミング教育・研修', description: 'ITの人材育成とプログラミングスキル向上のためのトレーニングとコースを提供します。' },
+        ],
+      },
+      {
+        title: 'AI＆先端技術',
+        cards: [
+          { icon: 'video', title: 'オンライン学習コンテンツ', description: '継続的な専門能力開発のための魅力的なオンライン学習コンテンツを提供します。' },
+          { icon: 'robot', title: 'AI・機械学習サービス', description: 'AIと機械学習の力を活用した革新的なソリューションを提供します。' },
+          { icon: 'chart-line', title: 'AIデータ分析', description: '高度なAI技術によるデータ分析とビジネス自動化を実現します。' },
+          { icon: 'headset', title: '技術応用システム', description: 'AIチャットボット、画像認識、自然言語処理システムを開発します。' },
+        ],
+      },
+      {
+        title: '運用＆サポート',
+        cards: [
+          { icon: 'users', title: 'セルフメディア管理', description: 'YouTubeやブログなどのセルフメディアプラットフォームの企画・管理を行います。' },
+          { icon: 'briefcase', title: 'ITタスクアウトソーシング', description: '効率性とコスト効果のためのITタスクのアウトソーシングを行います。' },
+          { icon: 'list-checks', title: 'ビジネスプロセス最適化', description: '設計、最適化、アウトソーシングサポートを通じてビジネスプロセスを改善します。' },
+          { icon: 'gear', title: '包括的サポート', description: 'すべてのサービスと関連活動に対する完全な運用サポートを提供します。' },
+        ],
+      },
+    ],
+    ctaTitle: 'ビジネス変革の準備はできていますか？',
+    ctaSubtitle: 'トリオソフトのサービスがお客様のビジネス目標達成にどのように貢献できるか、今すぐお問い合わせください。',
+    ctaButton: 'お問い合わせ',
+  },
+  cases: {
+    pageTitle: '導入事例',
+    items: [
+      {
+        client: 'JVR Music',
+        title: '音楽レーベルのデジタルプレゼンス強化',
+        description: '著名な音楽レーベルJVR Musicのデジタルプレゼンスを刷新し、モダンで使いやすいウェブサイトを開発しました。ソーシャルメディア機能の統合、コンテンツ配信の強化、モバイルデバイスへの最適化を実施しました。使用技術はReact、Node.js、ヘッドレスCMS。ウェブサイトのトラフィックが50%増加しました。',
+        image: '/cases/case_jvr.png',
+      },
+      {
+        client: 'Simmons Taiwan',
+        title: 'ブランドのEコマース最適化',
+        description: 'Simmons Taiwanのeコマースプラットフォームを最適化し、ユーザー体験と販売効率を改善しました。ウェブサイトの完全リデザイン、高度な検索・フィルタリング機能の実装、新しい決済ゲートウェイとの統合を実施しました。使用技術はVue.js、.NET Core、SQLServer。コンバージョン率が20%改善し、平均注文額が10%増加しました。',
+        image: '/cases/case_simmons.png',
+      },
+      {
+        client: 'VDS',
+        title: '小売スタートアップ向けスケーラブルプラットフォーム開発',
+        description: '小売スタートアップのVDSと提携し、革新的な製品向けのスケーラブルで堅牢なプラットフォームを開発しました。マイクロサービスアーキテクチャの構築、リアルタイムデータ処理の実装、高可用性の確保に注力しました。使用技術はGo、Kubernetes、Kafka。ローンチ初年度でユーザーベースが10倍に成長しました。',
+        image: '/cases/case_vds.png',
+      },
+    ],
+    viewAll: '全事例を見る',
+    contactUs: 'お問い合わせ',
+  },
+  about: {
+    pageTitle: 'トリオソフトについて',
+    intro: 'トリオソフトは、革新的なシステムアーキテクチャコンサルティング、オーダーメイドのソフトウェア・アプリ設計、最先端のAI技術を通じてテック業界に革命を起こす、ダイナミックなスタートアップです。現在のニーズを満たすだけでなく、将来の課題も見据えたソリューションでビジネスを支援し、持続的な成長と競争優位性を確保することが私たちのミッションです。',
+    storyTitle: '私たちのストーリー',
+    story: '2025年に経験豊富なテックエキスパートのチームによって設立されたトリオソフトは、複雑な技術的可能性と実践的なビジネスアプリケーションの架け橋となる共通ビジョンから生まれました。テックコンサルティングと開発においてより機敏でクライアント中心のアプローチの必要性を認識し、イノベーション、コラボレーション、具体的な成果を優先する会社を設立しました。',
+    teamTitle: 'チーム',
+    team: [
+      { name: 'ブルース・ツァイ', role: 'CEO & 創業者' },
+    ],
+    teamDescription: '私たちのチームは業界のベテランと新進気鋭の人材で構成されており、それぞれがユニークなスキルと経験を持ち寄っています。戦略的コンサルティングから実践的な開発まで、専門家たちは卓越した成果を提供し、クライアントの成功を推進することにコミットしています。',
+    valuesTitle: '私たちの価値観',
+    values: [
+      { icon: 'lightbulb', title: 'イノベーション', description: '私たちは創造性を重んじ、問題解決の新しい方法を常に探求し、テクノロジーの限界を押し広げます。' },
+      { icon: 'users', title: 'コラボレーション', description: '私たちはチームワークの力を信じ、共有の目標を達成するためにクライアントと緊密に連携します。' },
+      { icon: 'rocket', title: 'エクセレンス', description: '私たちは期待を超え、意義ある影響をもたらす高品質なソリューションの提供に専念しています。' },
+    ],
+    ctaTitle: '最先端技術でビジネスを変革する準備はできていますか？',
+    ctaSubtitle: 'プロジェクトについて話し合い、トリオソフトがどのようにお客様の目標達成に貢献できるかを探るために、今すぐお問い合わせください。',
+    ctaButton: 'お問い合わせ',
+  },
+  contact: {
+    pageTitle: 'お問い合わせ',
+    pageSubtitle: 'ご質問やサポートについて、お気軽にお問い合わせください。',
+    namePlaceholder: 'お名前',
+    emailPlaceholder: 'メールアドレス',
+    subjectPlaceholder: '件名',
+    messagePlaceholder: 'メッセージ',
+    nameLabel: 'お名前',
+    emailLabel: 'メールアドレス',
+    subjectLabel: '件名',
+    messageLabel: 'メッセージ',
+    submit: '送信',
+    infoTitle: '連絡先情報',
+    address: '住所：〒231-0004 神奈川県横浜市中区本浜町3-21-2 ヘリオス関内ビル4階414号室',
+    phone: '電話：09-1030-9865',
+    email: 'メール：info@triosoft.com',
+  },
+  language: {
+    title: 'Select Language / 言語を選択',
+    subtitle: 'Choose your preferred language / お好みの言語を選択してください',
+    en: { name: 'English', desc: 'English version', flag: '🇺🇸', href: '#/' },
+    jp: { name: '日本語', desc: '日本語版', flag: '🇯🇵', href: '#/jp/' },
+  },
+};
