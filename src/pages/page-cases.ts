@@ -66,12 +66,12 @@ export class PageCases extends LitElement {
       text-decoration: none;
     }
     .btn-primary {
-      background-color: #bcd1e5;
-      color: #111518;
+      background-color: #1572cf;
+      color: #f8fafc;
     }
     .btn-secondary {
-      background-color: #eaedf0;
-      color: #111518;
+      background-color: #1572cf;
+      color: #f8fafc;
     }
     .truncate {
       overflow: hidden;
