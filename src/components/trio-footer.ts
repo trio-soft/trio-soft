@@ -3,9 +3,12 @@ import { customElement, property } from 'lit/decorators.js';
 
 @customElement('trio-footer')
 export class TrioFooter extends LitElement {
-  @property({ type: String }) privacyPolicy = 'Privacy Policy';
-  @property({ type: String }) termsOfService = 'Terms of Service';
-  @property({ type: String }) copyright = '© 2025 Trio-Soft. All rights reserved.';
+  @property({ type: String }) lang = 'en';
+  @property({ type: Object }) data: { privacyPolicy: string; termsOfService: string; copyright: string } = {
+    privacyPolicy: 'Privacy Policy',
+    termsOfService: 'Terms of Service',
+    copyright: '© 2025 Trio-Soft. All rights reserved.',
+  };
 
   static styles = css`
     :host {
@@ -54,15 +57,18 @@ export class TrioFooter extends LitElement {
   `;
 
   render() {
+    const privacyHref = this.lang === 'jp' ? '#/jp/privacy' : '#/privacy';
+    const termsHref = this.lang === 'jp' ? '#/jp/terms' : '#/terms';
+
     return html`
       <div class="footer-outer">
         <div class="footer-inner">
           <div class="footer-content">
             <div class="footer-links">
-              <a class="footer-link" href="#">${this.privacyPolicy}</a>
-              <a class="footer-link" href="#">${this.termsOfService}</a>
+              <a class="footer-link" href="${privacyHref}">${this.data.privacyPolicy}</a>
+              <a class="footer-link" href="${termsHref}">${this.data.termsOfService}</a>
             </div>
-            <p class="footer-copyright">${this.copyright}</p>
+            <p class="footer-copyright">${this.data.copyright}</p>
           </div>
         </div>
       </div>
