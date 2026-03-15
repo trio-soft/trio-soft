@@ -209,6 +209,7 @@ export class PageCareers extends LitElement {
             <div class="job-meta">
               <span>📍 ${job.location}</span>
               <span>💼 ${job.type}</span>
+              ${job.salary ? html`<span>💰 ${job.salary}</span>` : ''}
             </div>
             <p class="job-desc">${job.description}</p>
             <div class="job-section-title">${responsibilitiesLabel}</div>

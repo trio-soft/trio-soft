@@ -273,7 +273,7 @@ export const en = {
     cultureTitle: 'Culture & Benefits',
     cultureItems: [
       'Fully remote work environment',
-      'Flexible working hours with async communication',
+      'Full-flex system (Core time: 11:00 - 15:00)',
       'Flat organizational structure',
       'Opportunity to work with cutting-edge AI and cloud technologies',
       'Multilingual, international team (Japanese & English)',
@@ -284,6 +284,7 @@ export const en = {
       {
         title: 'Backend / Fullstack Engineer',
         location: 'Remote (Japan-based preferred)',
+        salary: 'Monthly ¥300,000 - ¥400,000 (Based on experience)',
         type: 'Full-time / Contract',
         description: 'We are looking for a Backend or Fullstack Engineer to join our growing team. You will design, develop, and operate scalable backend systems and APIs, contribute to architecture decisions, and integrate AI-powered features into our products.',
         responsibilities: [
