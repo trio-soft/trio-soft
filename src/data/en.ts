@@ -285,7 +285,7 @@ export const en = {
         title: 'Backend / Fullstack Engineer',
         location: 'Remote (Japan-based preferred)',
         salary: 'Monthly ¥300,000 - ¥400,000 (Based on experience)',
-        type: 'Full-time / Contract',
+        type: 'Full-time',
         description: 'We are looking for a Backend or Fullstack Engineer to join our growing team. You will design, develop, and operate scalable backend systems and APIs, contribute to architecture decisions, and integrate AI-powered features into our products.',
         responsibilities: [
           'Design and develop scalable backend services and RESTful/GraphQL APIs',
