@@ -217,7 +217,7 @@ export const jp: SiteData = {
     messageLabel: 'メッセージ',
     submit: '送信',
     infoTitle: '連絡先情報',
-    address: '住所：〒231-0004 神奈川県横浜市中区本浜町3-21-2 ヘリオス関内ビル4階414号室',
+    address: '住所：〒231-0004 神奈川県横浜市中区元浜町3-21-2 ヘリオス関内ビル4階414号室',
     phone: '電話：+886-9-1030-9865',
     email: 'メール：contact@trio-soft.biz',
   },
