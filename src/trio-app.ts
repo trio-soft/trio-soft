@@ -11,6 +11,7 @@ import './pages/page-about';
 import './pages/page-contact';
 import './pages/page-privacy';
 import './pages/page-terms';
+import './pages/page-careers';
 import './components/trio-language-selector';
 
 @customElement('trio-app')
@@ -92,6 +93,8 @@ export class TrioApp extends LitElement {
         return html`<page-privacy .lang=${this.lang} .data=${data.privacy}></page-privacy>`;
       case '/terms':
         return html`<page-terms .lang=${this.lang} .data=${data.terms}></page-terms>`;
+      case '/careers':
+        return html`<page-careers .lang=${this.lang} .data=${data.careers}></page-careers>`;
       default:
         return html`<page-home .lang=${this.lang} .data=${data.home}></page-home>`;
     }
