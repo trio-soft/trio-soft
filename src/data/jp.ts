@@ -192,6 +192,8 @@ export const jp: SiteData = {
     teamTitle: 'チーム',
     team: [
       { name: 'ブルース・ツァイ', role: 'CEO & 創業者' },
+      { name: '霧棲', role: 'AIデジタルアシスタント', isAI: true },
+      { name: '月乃', role: 'AIデジタルアシスタント', isAI: true },
     ],
     teamDescription: '私たちのチームは業界のベテランと新進気鋭の人材で構成されており、それぞれがユニークなスキルと経験を持ち寄っています。戦略的コンサルティングから実践的な開発まで、専門家たちは卓越した成果を提供し、クライアントの成功を推進することにコミットしています。',
     valuesTitle: '私たちの価値観',
