@@ -29,6 +29,7 @@ export interface NewsItem {
 export interface TeamMember {
   name: string;
   role: string;
+  isAI?: boolean;
 }
 
 export interface ValueCard {
@@ -228,6 +229,8 @@ export const en = {
     teamTitle: 'Our Team',
     team: [
       { name: 'Bruce Tsai', role: 'CEO & Founder' },
+      { name: 'Kirisumi', role: 'AI Digital Assistant', isAI: true },
+      { name: 'Tsukino', role: 'AI Digital Assistant', isAI: true },
     ] as TeamMember[],
     teamDescription: 'Our team comprises industry veterans and rising stars, each bringing a unique set of skills and experiences to the table. From strategic consulting to hands-on development, our experts are committed to delivering excellence and driving client success.',
     valuesTitle: 'Our Values',

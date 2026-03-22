@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import '../components/trio-cta-section';
-import { USER_SVG, LIGHTBULB_SVG, USERS_SVG, ROCKET_SVG } from '../icons';
+import { USER_SVG, LIGHTBULB_SVG, USERS_SVG, ROCKET_SVG, ROBOT_SVG } from '../icons';
 
 @customElement('page-about')
 export class PageAbout extends LitElement {
@@ -67,6 +67,10 @@ export class PageAbout extends LitElement {
       border: 1px solid #d5dce2;
       background-color: #f9fafb; /* gray-50 */
     }
+    .card--ai {
+      background-color: #eef4ff;
+      border-color: #b3caf5;
+    }
     .card-icon {
       color: #111518;
       width: 24px;
@@ -102,11 +106,12 @@ export class PageAbout extends LitElement {
         <h2 class="section-heading">${this.data.teamTitle}</h2>
         <div class="grid">
           ${this.data.team.map((member: any) => html`
-            <div class="card">
-              <div class="card-icon">${unsafeHTML(USER_SVG)}</div>
+            <div class="card ${member.isAI ? 'card--ai' : ''}">
+              <div class="card-icon" style="${member.isAI ? 'color:#3b5bdb' : ''}">${unsafeHTML(member.isAI ? ROBOT_SVG : USER_SVG)}</div>
               <div class="title-group">
                 <h3 class="card-title">${member.name}</h3>
                 <p class="card-desc">${member.role}</p>
+                ${member.isAI ? html`<span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;color:#3b5bdb;background:#dbe4ff;border-radius:4px;padding:2px 6px;margin-top:4px;">Digital Employee</span>` : ''}
               </div>
             </div>
           `)}
