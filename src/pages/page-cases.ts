@@ -33,6 +33,9 @@ export class PageCases extends LitElement {
       margin: 0;
       min-width: 288px;
     }
+    @media (max-width: 768px) {
+      .page-title { font-size: 24px; min-width: 0; }
+    }
     .footer-actions {
       display: flex;
       justify-content: center;

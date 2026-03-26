@@ -48,6 +48,11 @@ export class TrioHero extends LitElement {
       border-radius: 9999px; height: 48px; padding: 0 20px; background: #1572cf; color: #f8fafc;
       font-size: 16px; font-weight: 700; letter-spacing: 0.015em; text-decoration: none;
     }
+    @media (max-width: 768px) {
+      .hero-banner { min-height: 320px; padding: 24px 16px; }
+      .hero-title { font-size: 28px; }
+      .hero-subtitle { font-size: 14px; }
+    }
   `;
 
   render() {

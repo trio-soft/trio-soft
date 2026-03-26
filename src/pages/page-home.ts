@@ -19,6 +19,12 @@ export class PageHome extends LitElement {
     .intro-title { color: #0e141b; font-size: 28px; font-weight: 900; line-height: 1.2; letter-spacing: -0.033em; margin: 0; max-width: 720px; }
     .intro-desc { color: #0e141b; font-size: 16px; line-height: 1.5; margin: 0; max-width: 720px; opacity: 0.8; }
     .news-list { display: flex; flex-direction: column; }
+    @media (max-width: 768px) {
+      .section-title { font-size: 18px; padding: 16px 12px 8px; }
+      .intro-wrap { padding: 16px 12px; gap: 20px; }
+      .intro-title { font-size: 22px; }
+      .intro-desc { font-size: 14px; }
+    }
   `;
 
   render() {

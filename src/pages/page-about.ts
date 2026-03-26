@@ -90,6 +90,11 @@ export class PageAbout extends LitElement {
       color: #5e7387;
       margin: 0;
     }
+    @media (max-width: 768px) {
+      .page-title { font-size: 24px; min-width: 0; }
+      .grid { grid-template-columns: 1fr; }
+      .text-content { font-size: 14px; }
+    }
   `;
 
   render() {

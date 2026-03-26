@@ -40,6 +40,10 @@ export class PagePrivacy extends LitElement {
     .content p {
       margin-bottom: 1rem;
     }
+    @media (max-width: 768px) {
+      .page-title { font-size: 24px; }
+      .content { font-size: 14px; }
+    }
   `;
 
   render() {
