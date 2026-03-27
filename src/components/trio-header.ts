@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property, state } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { LOGO_SVG, GLOBE_SVG } from '../icons.js';
 import type { NavItem } from '../data/en.js';
@@ -13,6 +13,8 @@ export class TrioHeader extends LitElement {
     getStarted: 'Get Started',
   };
 
+  @state() private _menuOpen = false;
+
   static styles = css`
     :host { display: block; }
     .header {
@@ -24,6 +26,7 @@ export class TrioHeader extends LitElement {
       padding: 12px 16px;
       gap: 1rem;
       background: #f8fafc;
+      position: relative;
     }
     .header-brand { display: flex; align-items: center; gap: 16px; color: #0e141b; }
     .header-logo { width: 16px; height: 16px; }
@@ -43,16 +46,66 @@ export class TrioHeader extends LitElement {
       display: flex; cursor: pointer; align-items: center; justify-content: center; border-radius: 9999px;
       height: 40px; min-width: 40px; padding: 0 10px; background: #e7edf3; color: #0e141b; text-decoration: none; border: none;
     }
-    @media (max-width: 900px) {
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #0e141b;
+      padding: 4px 8px;
+      line-height: 1;
+    }
+    .mobile-nav {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .header-nav { display: none; }
+      .hamburger { display: flex; align-items: center; }
+      .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #f8fafc;
+        border-bottom: 1px solid #e7edf3;
+        padding: 8px 0;
+        z-index: 100;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+      .mobile-nav[hidden] { display: none; }
+      .mobile-nav-link {
+        color: #0e141b;
+        font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 12px 24px;
+        border-bottom: 1px solid #e7edf3;
+      }
+      .mobile-nav-link:last-child { border-bottom: none; }
+      .mobile-nav-link:hover { background: #eef2f6; }
+    }
+
+    @media (max-width: 900px) and (min-width: 769px) {
       .header { padding: 12px 16px; }
       .header-nav { gap: 16px; }
     }
   `;
 
+  private _toggleMenu() {
+    this._menuOpen = !this._menuOpen;
+  }
+
+  private _closeMenu() {
+    this._menuOpen = false;
+  }
+
   render() {
     const langHref = '#/language';
     const homeHref = this.lang === 'jp' ? '#/jp/' : '#/';
-    const contactHref = this.lang === 'jp' ? '#/jp/contact' : '#/contact';
 
     return html`
       <header class="header">
@@ -67,7 +120,11 @@ export class TrioHeader extends LitElement {
           <div class="header-actions">
             <a class="header-lang-btn" href="${langHref}" title="Change language">${unsafeHTML(GLOBE_SVG)}</a>
           </div>
+          <button class="hamburger" @click=${this._toggleMenu} aria-label="Toggle menu">☰</button>
         </div>
+        <nav class="mobile-nav" ?hidden=${!this._menuOpen}>
+          ${this.data.nav.map(item => html`<a class="mobile-nav-link" href="${item.href}" @click=${this._closeMenu}>${item.label}</a>`)}
+        </nav>
       </header>
     `;
   }

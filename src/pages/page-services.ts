@@ -15,6 +15,11 @@ export class PageServices extends LitElement {
     .page-subtitle { color: #4d7499; font-size: 14px; line-height: 1.5; margin: 0; }
     .section-title { color: #0e151b; font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; padding: 20px 16px 12px; margin: 0; }
     .grid-wrap { padding: 16px; }
+    @media (max-width: 768px) {
+      .page-title { font-size: 24px; }
+      .page-head-box { min-width: 0; }
+      .section-title { font-size: 18px; }
+    }
   `;
   render() {
     const s = this.data;

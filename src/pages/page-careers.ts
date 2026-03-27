@@ -141,6 +141,11 @@ export class PageCareers extends LitElement {
       color: #333;
     }
     .json-ld { display: none; }
+    @media (max-width: 768px) {
+      .page-title { font-size: 24px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .job-card { margin: 0.5rem; padding: 1rem; }
+    }
   `;
 
   private getJsonLd() {

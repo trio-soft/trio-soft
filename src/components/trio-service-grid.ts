@@ -17,6 +17,9 @@ export class TrioServiceGrid extends LitElement {
       gap: 12px;
       padding: 0;
     }
+    @media (max-width: 768px) {
+      .service-grid { grid-template-columns: 1fr; }
+    }
   `;
 
   render() {

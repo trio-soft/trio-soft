@@ -29,6 +29,7 @@ export class TrioApp extends LitElement {
       font-family: 'Inter', 'Noto Sans JP', 'Noto Sans', sans-serif;
       background-color: #f8fafc;
       color: #0e141b;
+      overflow-x: hidden;
     }
     .app-container {
       display: flex;

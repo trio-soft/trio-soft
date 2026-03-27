@@ -50,6 +50,7 @@ export class TrioCaseCard extends LitElement {
     }
 
     @media (max-width: 768px) {
+      .case-card { min-width: 0; }
       .case-card.horizontal {
         flex-direction: column;
       }
