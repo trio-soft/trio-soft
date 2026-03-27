@@ -28,6 +28,14 @@ export class TrioCaseList extends LitElement {
       padding: 16px;
       gap: 12px;
     }
+    @media (max-width: 768px) {
+      .case-list-scrollable {
+        overflow-x: visible;
+      }
+      .case-list-scrollable .case-list-inner {
+        flex-direction: column;
+      }
+    }
     .case-list-vertical .case-list-inner {
       display: flex;
       flex-direction: column;

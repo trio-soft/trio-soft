@@ -16,6 +16,10 @@ export class TrioNewsItem extends LitElement {
     .news-item-title { color: #0e141b; font-size: 16px; font-weight: 700; line-height: 1.3; margin: 0; }
     .news-item-image-wrap { flex: 1; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; }
     .news-item-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 768px) {
+      .news-item { flex-direction: column; }
+      .news-item-image-wrap { aspect-ratio: 16/9; }
+    }
   `;
 
   render() {

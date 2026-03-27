@@ -31,6 +31,10 @@ export class TrioCtaSection extends LitElement {
       margin: 0;
       max-width: 720px;
     }
+    @media (max-width: 768px) {
+      .cta-title { font-size: 22px; }
+      .cta-box { padding: 24px 16px; }
+    }
     .cta-subtitle {
       color: #0e141b;
       font-size: 16px;

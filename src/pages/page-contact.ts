@@ -160,6 +160,10 @@ export class PageContact extends LitElement {
       height: 100%;
       border: 0;
     }
+    @media (max-width: 768px) {
+      .page-title { font-size: 24px; }
+      .title-group { min-width: 0; }
+    }
   `;
 
   private async _handleSubmit(e: Event) {
